@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private EditText mBookInput;
     private TextView mTitleText;
     private TextView mAuthorText;
+    private RadioButton epub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mBookInput = (EditText)findViewById(R.id.bookInput);
         mTitleText = (TextView)findViewById(R.id.titleText);
         mAuthorText = (TextView)findViewById(R.id.authorText);
-
+        epub = (RadioButton)  findViewById(R.id.epub);
         // TASK 4.4.6 : Reconecta El Loader en caso de existir
         if(getSupportLoaderManager().getLoader(0)!=null){
             getSupportLoaderManager().initLoader(0,null,this);
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if(args != null){
             queryString = args.getString("queryString");
         }
-        return new BookLoader(this, queryString);
+        return new BookLoader(this, queryString, epub.isChecked());
     }
 
     // 'onLoadFinished' : LLAMADO AL FINALIZAR LA TAREA EN SEGUNDO PLANO

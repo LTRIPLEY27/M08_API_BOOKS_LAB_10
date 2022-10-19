@@ -44,16 +44,36 @@
         app:layout_constraintTop_toBottomOf="@id/instructions"
         />
 
+
+    <!--CHALLENGE : Filtro EPubs -->
+
+    <RadioButton
+        android:id="@+id/epub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookInput" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/epub"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookInput" />
+
     <!--3ero BUTTON QUE DEMANDA EL LAB-->
-
-
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="160dp"
         android:layout_height="47dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="80dp"
         android:background="@color/purple_500"
         android:onClick="searchBooks"
         android:text="@string/button_text"
@@ -65,8 +85,8 @@
         android:id="@+id/titleBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Title"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="96dp"
+        android:hint="@string/titles"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -85,18 +105,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/titleBook" />
 
+    <!--5TO TEXVIEW QUE DEMANDA EL LAB-->
     <TextView
         android:id="@+id/authorBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Author"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="104dp"
+        android:hint="@string/author"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/titleText" />
-    <!--5TO TEXVIEW QUE DEMANDA EL LAB-->
+
     <TextView
         android:id="@+id/authorText"
         android:layout_width="wrap_content"

@@ -23,22 +23,34 @@ public class NetworkUtils {
     // Parameter to filter by print type.
     private static final String PRINT_TYPE = "printType";
 
+    // CHALLENGES
+    private static final String EPUB_PARAM = "download";
 
     //MÉTODO PARA OBTENER LA INFORMACIÓN DEL LIBRO A TRAVÉS DE LA API
-    static String getBookInfo(String queryString){
+    static String getBookInfo(String queryString, boolean epub){
         // VARIABLES DE MÉTODO PARA EJECUTAR LA CONEXIÓN
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String bookJSONString = null;
 
         try{
-            // CONSTRUCCIÍN DE LA CONSULTA URI CON EL 'BUILDER'
-            Uri builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
-                    .appendQueryParameter(QUERY_PARAM, queryString)
-                    .appendQueryParameter(MAX_RESULTS, "10")
-                    .appendQueryParameter(PRINT_TYPE, "books")
-                    .build();
-
+            // CHALLENGES
+            Uri builtURI;
+            if(epub){
+                // CONSTRUCCIÍN DE LA CONSULTA URI CON EL 'BUILDER'
+                builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
+                        .appendQueryParameter(QUERY_PARAM, queryString)
+                        .appendQueryParameter(MAX_RESULTS, "1")
+                        .appendQueryParameter(EPUB_PARAM, "epub")
+                        .build();
+            } else {
+                // CONSTRUCCIÍN DE LA CONSULTA URI CON EL 'BUILDER'
+                builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
+                        .appendQueryParameter(QUERY_PARAM, queryString)
+                        .appendQueryParameter(MAX_RESULTS, "10")
+                        .appendQueryParameter(PRINT_TYPE, "books")
+                        .build();
+            }
             // TRNASFORMACIÓN DE LA CONSULTA URI A OBJETO URL
             URL requestURL = new URL(builtURI.toString());
 
@@ -81,7 +93,6 @@ public class NetworkUtils {
                 }
             }
         }
-
         // VERIFICACIÓN DESDE EL 'LOG' DE LA RESPUESTA Y FORMATO
         Log.d(LOG_TAG, bookJSONString);
         return bookJSONString;

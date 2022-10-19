@@ -10,7 +10,9 @@
     <string name="no_search_term">Please enter a search term</string>
     <string name="no_network">Please check your network connection and try again.</string>
     <string name="title">The API Books</string>
-
+    <string name="epub">Epub</string>
+    <string name="titles">Title</string>
+    <string name="author">Author</string>
 
 
 </resources>
