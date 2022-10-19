@@ -6,7 +6,7 @@ import androidx.loader.content.AsyncTaskLoader;
 
 import org.jetbrains.annotations.Nullable;
 
-// TASK 4 : 4.1 --> Crear clase AsycTaskLoader
+// *********************        TASK 4 : 4.1 --> Crear clase AsycTaskLoader     ****************************************
 public class BookLoader extends AsyncTaskLoader<String> {
 
     //4.2.3 VARIABLES DE CLASE

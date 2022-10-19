@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
 
+//  ************************        TASK 2.3 : CREACIÓN DE LA CLASE ASYNCTASK       *************************************************
 // CLASE QUE IMPLEMENTARÁ LA SUBCLASE ASYNC PARA EL HILO DE LA CONEXIÓN
 public class FetchBook extends AsyncTask <String, Void, String> {
 
@@ -23,11 +24,14 @@ public class FetchBook extends AsyncTask <String, Void, String> {
         this.mAuthorText = new WeakReference<>(authorText);
     }
 
+    //  *************************        TASK 2.3.2 : IMPLEMENTACIÓN DE LOS MÉTODOS DE LA CLASE ASYNCTASK       ********************************
     @Override
     protected String doInBackground(String... strings) {
         return null;//NetworkUtils.getBookInfo(strings[0]);
     }
 
+
+    //  *************************        TASK 2.7 : IMPLEMENTACIÓN DEL PARSEO DE JSON A STRING      ********************************
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);

@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+//    *******************  TASK 2.4 : creación de la clase NETWORK, para construir la conexión   *******************************************
 //CLASE CONEXIÓN A LA API CON QUERY
 public class NetworkUtils {
 
@@ -23,9 +23,10 @@ public class NetworkUtils {
     // Parameter to filter by print type.
     private static final String PRINT_TYPE = "printType";
 
-    // CHALLENGES
+    //    *******************    CHALLENGES      *******************************************
     private static final String EPUB_PARAM = "download";
 
+    //    *******************         TASK 2.4.3 : CREACIÓN DEL MÉTODO ESTÁTICO 'GETINFO'       *******************************************
     //MÉTODO PARA OBTENER LA INFORMACIÓN DEL LIBRO A TRAVÉS DE LA API
     static String getBookInfo(String queryString, boolean epub){
         // VARIABLES DE MÉTODO PARA EJECUTAR LA CONEXIÓN
@@ -36,6 +37,7 @@ public class NetworkUtils {
         try{
             // CHALLENGES
             Uri builtURI;
+            // condicional para verificar si devuelve solo los datos que contengan la constante 'epub' o caso contrario
             if(epub){
                 // CONSTRUCCIÍN DE LA CONSULTA URI CON EL 'BUILDER'
                 builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
@@ -56,6 +58,8 @@ public class NetworkUtils {
 
             // APERTURA DE LA CONEXIÓN CON REQUEST
 
+
+            //    *******************         TASK 2.5:REALIZANDO LA CONEXIÓN      *******************************************
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             // TIPO DE REQUEST
             urlConnection.setRequestMethod("GET");
@@ -69,7 +73,7 @@ public class NetworkUtils {
             StringBuilder builder = new StringBuilder();
 
             String line;
-            // DECLARACIÓN Y PARSEO A FORMATO JSON DE LAS LÍNEAS QUE SE TRANSCRIBAM
+            // DECLARACIÓN Y PARSEO A FORMATO JSON lÍNEA a Linea
             while((line = reader.readLine()) != null){
                 builder.append(line);
                 builder.append("\n");

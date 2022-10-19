@@ -20,10 +20,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-// TASK 4.3 : Modificación del MainActivity con LoaderManager
+// *******************      TASK 4.3 : Modificación del MainActivity con LoaderManager      *******************************
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
-    // VARIABLES PARA USER INPUT
+//********************       TASK 2.2 : OBTENCIÓN DE LOS INPUTS DEL LAYOUT EN EL MAIN ACTIVITY      ******************************
     private EditText mBookInput;
     private TextView mTitleText;
     private TextView mAuthorText;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void searchBooks(View view) {
         String queryString = mBookInput.getText().toString();
 
-        // TASK 3 : 3.1 -- 'Esconde el Teclado'
+        // ****************************         TASK 3 : 3.1 -- 'Limpia la búsqueda' Y OCULTA EL TECLADO        *****************************
         // LLAMADO A OCULTAR EL KEYBOARD (uso del 'Context')
         InputMethodManager input = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         // VERIFICACIÍON DE LA VARIABLE
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             input.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
 
-        // TASK 3 : 3.2 -- 'Manejo de la conexión'
+//**********************     TASK 3 : 3.2 -- 'Manejo de la conexión'        *********************************
         ConnectivityManager managerConect = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         //***************************** CHANGES THE 'NetworkInfo' to 'Network'
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
     }
 
-    // TASK 3 : 3.1 -- 'Limpia la búsqueda'
+    // ****************************         TASK 3 : 3.1 -- 'Limpia la búsqueda' Y OCULTA EL TECLADO        *****************************
     //MÉTODO QUE LIMPIA EL TECLADO E INDICA QUE ESTÁ EN 'CARGA'
     void clean(int option){
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
     }
 
-    // TASK 4.3.2 : Métodos de la Inteface 'loadermanager'
+    // ************************         TASK 4.3.2 : Métodos de la Inteface 'loadermanager'     *************************
     // 'onCreateLoader' : LLAMADO PARA INSTANCIAR EL LOADER
     // TASK 4.4.1 : IMPLEMENTACIÓN DE CALLBACKS
     @NonNull
