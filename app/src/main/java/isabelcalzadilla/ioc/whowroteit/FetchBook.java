@@ -47,7 +47,7 @@ public class FetchBook extends AsyncTask <String, Void, String> {
             //******* CONDICIONAL DEL WHILE PARA QUE VAYA IMPRIMIENDO LOS RESULTADOS
             while (i < itemsArray.length() && (authors == null && title == null)) {
 
-                // DECLARACIÓN DE NUEVAS ENIDADES JSONOBJECT
+                // DECLARACIÓN DE NUEVAS ENTIDADES JSONOBJECT
                 // 'book' ---> RECOGE UNA ARRAY DE 'items' PARA IMPRIMIR CADA RESPUESTA
                 JSONObject book = itemsArray.getJSONObject(i);
                 // 'volumnInfo' --< JSONOBJECT que recoge a su vez cada 'volumeInfo' DEL ANTERIOR JSONOBJECT 'book' PAA IR RECORRIDENDO ENTIDAS Y SUS ATRIBUTOS UNO A UNO

@@ -7,15 +7,29 @@
     android:layout_margin="16dp"
     tools:context=".MainActivity">
 
-    <!--1ER TEXVIEW QUE DEMANDA EL LAB-->
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/instructions"
-        android:text="@string/instructions"
+        android:layout_marginTop="10dp"
+        android:text="@string/title"
+        android:textSize="35sp"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--1ER TEXVIEW QUE DEMANDA EL LAB-->
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/instructions"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <!--2do EDITTEXT QUE DEMANDA EL LAB-->
     <EditText
@@ -33,39 +47,66 @@
     <!--3ero BUTTON QUE DEMANDA EL LAB-->
 
 
-    <!--4TO TEXVIEW QUE DEMANDA EL LAB-->
 
-    <!--5TO TEXVIEW QUE DEMANDA EL LAB-->
     <Button
         android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/purple_500"
         android:onClick="searchBooks"
         android:text="@string/button_text"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bookInput" />
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/titleBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:hint="Title"
+        android:layout_marginTop="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/searchButton" />
 
+    <!--4TO TEXVIEW QUE DEMANDA EL LAB-->
     <TextView
-        android:id="@+id/authorText"
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/titleBook" />
+
+    <TextView
+        android:id="@+id/authorBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Author"
+        android:layout_marginTop="120dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/titleText" />
+    <!--5TO TEXVIEW QUE DEMANDA EL LAB-->
+    <TextView
+        android:id="@+id/authorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/authorBook" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
